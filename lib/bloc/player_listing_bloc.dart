@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:football_players_bloc/models/nations.dart';
 import 'package:meta/meta.dart';
 
 part 'player_listing_event.dart';
