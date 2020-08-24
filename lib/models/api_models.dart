@@ -4,15 +4,15 @@ class ApiResult {
   int totalResults;
   String type;
   int count;
-  List<Items> items;
+  List<Players> items;
 
   ApiResult(
       {this.page,
-      this.totalPages,
-      this.totalResults,
-      this.type,
-      this.count,
-      this.items});
+        this.totalPages,
+        this.totalResults,
+        this.type,
+        this.count,
+        this.items});
 
   ApiResult.fromJson(Map<String, dynamic> json) {
     page = json['page'];
@@ -21,9 +21,9 @@ class ApiResult {
     type = json['type'];
     count = json['count'];
     if (json['items'] != null) {
-      items = new List<Items>();
+      items = new List<Players>();
       json['items'].forEach((v) {
-        items.add(new Items.fromJson(v));
+        items.add(new Players.fromJson(v));
       });
     }
   }
@@ -42,13 +42,13 @@ class ApiResult {
   }
 }
 
-class Items {
+class Players {
   String commonName;
   String firstName;
   String lastName;
   League league;
-  League nation;
-  League club;
+  Nation nation;
+  Club club;
   Headshot headshot;
   String position;
   int composure;
@@ -113,7 +113,7 @@ class Items {
   Null rawAttributeChemistryBonus;
   Null isLoan;
   Null squadPosition;
-  Null iconAttributes;
+  IconAttributes iconAttributes;
   String itemType;
   Null discardValue;
   String id;
@@ -121,94 +121,94 @@ class Items {
   int baseId;
   int rating;
 
-  Items(
+  Players(
       {this.commonName,
-      this.firstName,
-      this.lastName,
-      this.league,
-      this.nation,
-      this.club,
-      this.headshot,
-      this.position,
-      this.composure,
-      this.playStyle,
-      this.playStyleId,
-      this.height,
-      this.weight,
-      this.birthdate,
-      this.age,
-      this.acceleration,
-      this.aggression,
-      this.agility,
-      this.balance,
-      this.ballcontrol,
-      this.foot,
-      this.skillMoves,
-      this.crossing,
-      this.curve,
-      this.dribbling,
-      this.finishing,
-      this.freekickaccuracy,
-      this.gkdiving,
-      this.gkhandling,
-      this.gkkicking,
-      this.gkpositioning,
-      this.gkreflexes,
-      this.headingaccuracy,
-      this.interceptions,
-      this.jumping,
-      this.longpassing,
-      this.longshots,
-      this.marking,
-      this.penalties,
-      this.positioning,
-      this.potential,
-      this.reactions,
-      this.shortpassing,
-      this.shotpower,
-      this.slidingtackle,
-      this.sprintspeed,
-      this.standingtackle,
-      this.stamina,
-      this.strength,
-      this.vision,
-      this.volleys,
-      this.weakFoot,
-      this.traits,
-      this.specialities,
-      this.atkWorkRate,
-      this.defWorkRate,
-      this.playerType,
-      this.attributes,
-      this.name,
-      this.rarityId,
-      this.isIcon,
-      this.quality,
-      this.isGK,
-      this.positionFull,
-      this.isSpecialType,
-      this.contracts,
-      this.fitness,
-      this.rawAttributeChemistryBonus,
-      this.isLoan,
-      this.squadPosition,
-      this.iconAttributes,
-      this.itemType,
-      this.discardValue,
-      this.id,
-      this.modelName,
-      this.baseId,
-      this.rating});
+        this.firstName,
+        this.lastName,
+        this.league,
+        this.nation,
+        this.club,
+        this.headshot,
+        this.position,
+        this.composure,
+        this.playStyle,
+        this.playStyleId,
+        this.height,
+        this.weight,
+        this.birthdate,
+        this.age,
+        this.acceleration,
+        this.aggression,
+        this.agility,
+        this.balance,
+        this.ballcontrol,
+        this.foot,
+        this.skillMoves,
+        this.crossing,
+        this.curve,
+        this.dribbling,
+        this.finishing,
+        this.freekickaccuracy,
+        this.gkdiving,
+        this.gkhandling,
+        this.gkkicking,
+        this.gkpositioning,
+        this.gkreflexes,
+        this.headingaccuracy,
+        this.interceptions,
+        this.jumping,
+        this.longpassing,
+        this.longshots,
+        this.marking,
+        this.penalties,
+        this.positioning,
+        this.potential,
+        this.reactions,
+        this.shortpassing,
+        this.shotpower,
+        this.slidingtackle,
+        this.sprintspeed,
+        this.standingtackle,
+        this.stamina,
+        this.strength,
+        this.vision,
+        this.volleys,
+        this.weakFoot,
+        this.traits,
+        this.specialities,
+        this.atkWorkRate,
+        this.defWorkRate,
+        this.playerType,
+        this.attributes,
+        this.name,
+        this.rarityId,
+        this.isIcon,
+        this.quality,
+        this.isGK,
+        this.positionFull,
+        this.isSpecialType,
+        this.contracts,
+        this.fitness,
+        this.rawAttributeChemistryBonus,
+        this.isLoan,
+        this.squadPosition,
+        this.iconAttributes,
+        this.itemType,
+        this.discardValue,
+        this.id,
+        this.modelName,
+        this.baseId,
+        this.rating});
 
-  Items.fromJson(Map<String, dynamic> json) {
+  Players.fromJson(Map<String, dynamic> json) {
     commonName = json['commonName'];
     firstName = json['firstName'];
     lastName = json['lastName'];
     league =
-        json['league'] != null ? new League.fromJson(json['league']) : null;
+    json['league'] != null ? new League.fromJson(json['league']) : null;
     nation =
-        json['nation'] != null ? new League.fromJson(json['nation']) : null;
-    club = json['club'] != null ? new League.fromJson(json['club']) : null;
+    json['nation'] != null ? new Nation.fromJson(json['nation']) : null;
+    club = json['club'] != null ? new Club.fromJson(json['club']) : null;
     headshot = json['headshot'] != null
         ? new Headshot.fromJson(json['headshot'])
         : null;
@@ -257,8 +257,8 @@ class Items {
     vision = json['vision'];
     volleys = json['volleys'];
     weakFoot = json['weakFoot'];
-    traits = json['traits'].cast<String>();
-    specialities = json['specialities'].cast<String>();
+    //traits = json['traits'].cast<String>();
+    //specialities = json['specialities'].cast<String>();
     atkWorkRate = json['atkWorkRate'];
     defWorkRate = json['defWorkRate'];
     playerType = json['playerType'];
@@ -280,7 +280,9 @@ class Items {
     rawAttributeChemistryBonus = json['rawAttributeChemistryBonus'];
     isLoan = json['isLoan'];
     squadPosition = json['squadPosition'];
-    iconAttributes = json['iconAttributes'];
+    iconAttributes = json['iconAttributes'] != null
+        ? new IconAttributes.fromJson(json['iconAttributes'])
+        : null;
     itemType = json['itemType'];
     discardValue = json['discardValue'];
     id = json['id'];
@@ -371,7 +373,9 @@ class Items {
     data['rawAttributeChemistryBonus'] = this.rawAttributeChemistryBonus;
     data['isLoan'] = this.isLoan;
     data['squadPosition'] = this.squadPosition;
-    data['iconAttributes'] = this.iconAttributes;
+    if (this.iconAttributes != null) {
+      data['iconAttributes'] = this.iconAttributes.toJson();
+    }
     data['itemType'] = this.itemType;
     data['discardValue'] = this.discardValue;
     data['id'] = this.id;
@@ -383,7 +387,7 @@ class Items {
 }
 
 class League {
-  ImageUrls imageUrls;
+  LeagueImageUrls imageUrls;
   String abbrName;
   int id;
   Null imgUrl;
@@ -392,6 +396,111 @@ class League {
   League({this.imageUrls, this.abbrName, this.id, this.imgUrl, this.name});
 
   League.fromJson(Map<String, dynamic> json) {
+    imageUrls = json['imageUrls'] != null
+        ? new LeagueImageUrls.fromJson(json['imageUrls'])
+        : null;
+    abbrName = json['abbrName'];
+    id = json['id'];
+    imgUrl = json['imgUrl'];
+    name = json['name'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.imageUrls != null) {
+      data['imageUrls'] = this.imageUrls.toJson();
+    }
+    data['abbrName'] = this.abbrName;
+    data['id'] = this.id;
+    data['imgUrl'] = this.imgUrl;
+    data['name'] = this.name;
+    return data;
+  }
+}
+
+class LeagueImageUrls {
+  String dark;
+  String light;
+
+  LeagueImageUrls({this.dark, this.light});
+
+  LeagueImageUrls.fromJson(Map<String, dynamic> json) {
+    dark = json['dark'];
+    light = json['light'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['dark'] = this.dark;
+    data['light'] = this.light;
+    return data;
+  }
+}
+
+class Nation {
+  NationImageUrls imageUrls;
+  String abbrName;
+  int id;
+  Null imgUrl;
+  String name;
+
+  Nation({this.imageUrls, this.abbrName, this.id, this.imgUrl, this.name});
+
+  Nation.fromJson(Map<String, dynamic> json) {
+    imageUrls = json['imageUrls'] != null
+        ? new NationImageUrls.fromJson(json['imageUrls'])
+        : null;
+    abbrName = json['abbrName'];
+    id = json['id'];
+    imgUrl = json['imgUrl'];
+    name = json['name'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.imageUrls != null) {
+      data['imageUrls'] = this.imageUrls.toJson();
+    }
+    data['abbrName'] = this.abbrName;
+    data['id'] = this.id;
+    data['imgUrl'] = this.imgUrl;
+    data['name'] = this.name;
+    return data;
+  }
+}
+
+class NationImageUrls {
+  String small;
+  String medium;
+  String large;
+
+  NationImageUrls({this.small, this.medium, this.large});
+
+  NationImageUrls.fromJson(Map<String, dynamic> json) {
+    small = json['small'];
+    medium = json['medium'];
+    large = json['large'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['small'] = this.small;
+    data['medium'] = this.medium;
+    data['large'] = this.large;
+    return data;
+  }
+}
+
+class Club {
+  ImageUrls imageUrls;
+  String abbrName;
+  int id;
+  Null imgUrl;
+  String name;
+
+  Club({this.imageUrls, this.abbrName, this.id, this.imgUrl, this.name});
+
+  Club.fromJson(Map<String, dynamic> json) {
     imageUrls = json['imageUrls'] != null
         ? new ImageUrls.fromJson(json['imageUrls'])
         : null;
@@ -415,32 +524,36 @@ class League {
 }
 
 class ImageUrls {
-  String dark;
-  String light;
+  Dark dark;
+  Light light;
 
   ImageUrls({this.dark, this.light});
 
   ImageUrls.fromJson(Map<String, dynamic> json) {
-    dark = json['dark'];
-    light = json['light'];
+    dark = json['dark'] != null ? new Dark.fromJson(json['dark']) : null;
+    light = json['light'] != null ? new Light.fromJson(json['light']) : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['dark'] = this.dark;
-    data['light'] = this.light;
+    if (this.dark != null) {
+      data['dark'] = this.dark.toJson();
+    }
+    if (this.light != null) {
+      data['light'] = this.light.toJson();
+    }
     return data;
   }
 }
 
-class ImageUrls {
+class Dark {
   String small;
   String medium;
   String large;
 
-  ImageUrls({this.small, this.medium, this.large});
+  Dark({this.small, this.medium, this.large});
 
-  ImageUrls.fromJson(Map<String, dynamic> json) {
+  Dark.fromJson(Map<String, dynamic> json) {
     small = json['small'];
     medium = json['medium'];
     large = json['large'];
@@ -455,26 +568,24 @@ class ImageUrls {
   }
 }
 
-class ImageUrls {
-  ImageUrls dark;
-  ImageUrls light;
+class Light {
+  String small;
+  String medium;
+  String large;
 
-  ImageUrls({this.dark, this.light});
+  Light({this.small, this.medium, this.large});
 
-  ImageUrls.fromJson(Map<String, dynamic> json) {
-    dark = json['dark'] != null ? new ImageUrls.fromJson(json['dark']) : null;
-    light =
-        json['light'] != null ? new ImageUrls.fromJson(json['light']) : null;
+  Light.fromJson(Map<String, dynamic> json) {
+    small = json['small'];
+    medium = json['medium'];
+    large = json['large'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.dark != null) {
-      data['dark'] = this.dark.toJson();
-    }
-    if (this.light != null) {
-      data['light'] = this.light.toJson();
-    }
+    data['small'] = this.small;
+    data['medium'] = this.medium;
+    data['large'] = this.large;
     return data;
   }
 }
@@ -516,6 +627,102 @@ class Attributes {
     data['name'] = this.name;
     data['value'] = this.value;
     data['chemistryBonus'] = this.chemistryBonus;
+    return data;
+  }
+}
+
+class IconAttributes {
+  List<ClubTeamStats> clubTeamStats;
+  List<NationalTeamStats> nationalTeamStats;
+  String iconText;
+
+  IconAttributes({this.clubTeamStats, this.nationalTeamStats, this.iconText});
+
+  IconAttributes.fromJson(Map<String, dynamic> json) {
+    if (json['clubTeamStats'] != null) {
+      clubTeamStats = new List<ClubTeamStats>();
+      json['clubTeamStats'].forEach((v) {
+        clubTeamStats.add(new ClubTeamStats.fromJson(v));
+      });
+    }
+    if (json['nationalTeamStats'] != null) {
+      nationalTeamStats = new List<NationalTeamStats>();
+      json['nationalTeamStats'].forEach((v) {
+        nationalTeamStats.add(new NationalTeamStats.fromJson(v));
+      });
+    }
+    iconText = json['iconText'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.clubTeamStats != null) {
+      data['clubTeamStats'] =
+          this.clubTeamStats.map((v) => v.toJson()).toList();
+    }
+    if (this.nationalTeamStats != null) {
+      data['nationalTeamStats'] =
+          this.nationalTeamStats.map((v) => v.toJson()).toList();
+    }
+    data['iconText'] = this.iconText;
+    return data;
+  }
+}
+
+class ClubTeamStats {
+  int years;
+  int clubId;
+  String clubName;
+  int appearances;
+  int goals;
+
+  ClubTeamStats(
+      {this.years, this.clubId, this.clubName, this.appearances, this.goals});
+
+  ClubTeamStats.fromJson(Map<String, dynamic> json) {
+    years = json['years'];
+    clubId = json['clubId'];
+    clubName = json['clubName'];
+    appearances = json['appearances'];
+    goals = json['goals'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['years'] = this.years;
+    data['clubId'] = this.clubId;
+    data['clubName'] = this.clubName;
+    data['appearances'] = this.appearances;
+    data['goals'] = this.goals;
+    return data;
+  }
+}
+
+class NationalTeamStats {
+  int years;
+  int clubId;
+  String clubName;
+  int appearances;
+  int goals;
+
+  NationalTeamStats(
+      {this.years, this.clubId, this.clubName, this.appearances, this.goals});
+
+  NationalTeamStats.fromJson(Map<String, dynamic> json) {
+    years = json['years'];
+    clubId = json['clubId'];
+    clubName = json['clubName'];
+    appearances = json['appearances'];
+    goals = json['goals'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['years'] = this.years;
+    data['clubId'] = this.clubId;
+    data['clubName'] = this.clubName;
+    data['appearances'] = this.appearances;
+    data['goals'] = this.goals;
     return data;
   }
 }
