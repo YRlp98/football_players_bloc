@@ -1,6 +1,6 @@
-part of 'player_listing_bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:football_players_bloc/models/nations.dart';
 
-@immutable
 abstract class PlayerListingEvent {}
 
 class CountrySelectedEvent extends PlayerListingEvent {

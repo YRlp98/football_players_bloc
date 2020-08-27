@@ -1,7 +1,9 @@
-part of 'player_listing_bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:football_players_bloc/models/api_models.dart';
 
-@immutable
 abstract class PlayerListingState {}
+
+class PlayerUninitializedState extends PlayerListingState {}
 
 class PlayerFetchingState extends PlayerListingState {}
 
