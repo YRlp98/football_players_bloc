@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_players_bloc/bloc/player_listing_bloc.dart';
+import 'package:football_players_bloc/pages/playerListing.dart';
 import 'package:football_players_bloc/services/repository.dart';
 import 'package:football_players_bloc/widgets/horizontalBar.dart';
 import 'package:football_players_bloc/widgets/searchBar.dart';
@@ -53,7 +54,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 20.0,
             ),
-            // TODO: PlayerListing(),
+            PlayerListing(),
           ],
         ),
       ),
