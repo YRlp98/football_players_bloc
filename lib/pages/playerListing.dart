@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_players_bloc/bloc/player_listing_bloc.dart';
 import 'package:football_players_bloc/bloc/player_listing_state.dart';
 import 'package:football_players_bloc/models/api_models.dart';
+import 'package:football_players_bloc/pages/playerProfile.dart';
 import 'package:football_players_bloc/widgets/message.dart';
 
 class PlayerListing extends StatelessWidget {
@@ -57,9 +58,7 @@ class PlayerListing extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              null // TODO: PlayerProfile(player)
-                          ));
+                          builder: (context) => PlayerProfile(player)));
                 },
               ),
             ),
